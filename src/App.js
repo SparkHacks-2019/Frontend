@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Grommet, Box } from "grommet";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet plain>
+      <Box
+        direction="row"
+        border={{ color: "brand", size: "large" }}
+        pad="medium"
+      >
+        <Box pad="small" background="dark-3" />
+        <Box pad="medium" background="light-3" />
+      </Box>
+    </Grommet>
   );
 }
 
