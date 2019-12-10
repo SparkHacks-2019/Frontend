@@ -1,4 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
+Assuming you have `node.js` and `yarn` installed, simply run `yarn` in the cloned directory.
 
 ## Available Scripts
 
