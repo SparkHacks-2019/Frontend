@@ -1,13 +1,13 @@
 const theme = {
     "name": "Lilypad",
-    "rounding": 4,
+    "rounding": 0,
     "spacing": 24,
-    "defaultMode": "light",
+    "defaultMode": "dark",
     "global": {
       "colors": {
         "brand": {
-          "dark": "#7700cc",
-          "light": "#6600cc"
+          "dark": "#77dd77",
+          "light": "#77dd77"
         },
         "background": {
           "dark": "#111111",
@@ -80,6 +80,11 @@ const theme = {
       "selected": {
         "background": "selected-background",
         "color": "selected-text"
+      },
+      "control": {
+        "border": {
+          "radius": "0px"
+        }
       }
     },
     "chart": {},
@@ -90,6 +95,30 @@ const theme = {
     "heading": {
       "font": {
         "family": "system-ui"
+      }
+    },
+    "layer": {
+      "background": {
+        "dark": "#111111",
+        "light": "#FFFFFFF"
+      }
+    },
+    "button": {
+      "border": {
+        "radius": "0px"
+      }
+    },
+    "checkBox": {
+      "check": {
+        "radius": "0px"
+      },
+      "toggle": {
+        "radius": "0px"
+      }
+    },
+    "radioButton": {
+      "check": {
+        "radius": "0px"
       }
     }
   }

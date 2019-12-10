@@ -1,11 +1,14 @@
 import React from "react";
-import { Grommet, Box } from "grommet";
+import { Grommet } from "grommet";
 import theme from './theme';
 import withFirebaseAuth, { WrappedComponentProps } from 'react-with-firebase-auth';
 import firebase from 'firebase';
 import firebaseConfig from './fire';
 import 'firebase/auth';
+import LandingPage from "./pages/landing";
+import DashboardPage from "./pages/dashboard";
 
+// Rather than initializing the app in 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
@@ -26,23 +29,17 @@ function App({
   loading,
 }) {
   return (
-    <React.Fragment>
-    {
-      user
-        ? <h1>Hello, {user.displayName}</h1>
-        : <h1>Log in</h1>
-    }
- 
-    {
-      user
-        ? <button onClick={signOut}>Sign out</button>
-        : <button onClick={signInWithGoogle}>Sign in with Google</button>
-    }
- 
-    {
-      loading && <h2>Loading..</h2>
-    }
-    </React.Fragment>
+    <Grommet theme={theme}>
+      <React.Fragment>
+        {/* This is the switch statement that loads auth for dashboards  */}
+        {
+          user
+            ? <DashboardPage user={user} signOut={signOut} />
+            : <LandingPage signIn={signInWithGoogle}/>
+        }
+
+      </React.Fragment>
+    </Grommet>
   );
 }
 
