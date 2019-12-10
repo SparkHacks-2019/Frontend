@@ -34,7 +34,7 @@ const LandingPage = props => {
             <Button
                 label={<Heading size={"small"}>Sign in</Heading>}
                 primary
-                onClick={() => alert('hello, world')}
+                onClick={props.signIn}
             />
           </Box>
       </Box>
