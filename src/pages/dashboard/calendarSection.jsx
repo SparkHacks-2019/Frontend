@@ -11,6 +11,7 @@ const DashboardCalendarSection = props => {
           props.setCalendarDate(props.formatDate(date));
           console.log(date);
         }}
+        
       />
       <Box margin={{ left: "small" }}>
         <Heading size="small" margin="none">Entries for {props.calendarDate}:</Heading>
