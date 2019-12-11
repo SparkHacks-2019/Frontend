@@ -12,6 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import Typist from "react-typist";
 import DashboardHeading from "./dashboard/header";
+import DashboardCalendarSection from "./dashboard/calendarSection";
 
 function formatDate(date) {
     var d = new Date(date),
@@ -43,26 +44,14 @@ const DashboardPage = props => {
   });
   return (
     <>
-      <Box pad="small">
+      <Box animation="slideDown" pad="small">
         <DashboardHeading
           changeTheme={props.changeTheme}
           signOut={props.signOut}
           user={props.user}
         />
-        <Box direction="row-responsive" margin={{ top: "large" }}>
-          <Box justify="center" direction="row-responsive">
-            <Calendar
-              size="medium"
-              date={new Date()}
-              onSelect={date => {
-                setCalendarDate(formatDate(date))
-                console.log(date)
-              }}
-            />
-            <Box margin={{left:"small"}}>
-            <Heading margin="none">Goal for {calendarDate}:</Heading>
-            </Box>
-          </Box>
+        <Box direction="row-responsive" margin={{ top: "small" }}>
+          <DashboardCalendarSection formatDate={formatDate} setCalendarDate={setCalendarDate} calendarDate={calendarDate} />
             {/* <Heading>{JSON.stringify(APIData["weather"])}</Heading> */}
         </Box>
       </Box>
