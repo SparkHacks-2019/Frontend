@@ -6,21 +6,18 @@ import {
   Stack,
   Diagram,
   WorldMap,
-  Calendar
+  Calendar,
+  Image
 } from "grommet";
-import React from "react";
+import React, {useEffect} from "react";
 import Typist from "react-typist";
+import DashboardHeading from "./dashboard/header";
 
 const DashboardPage = props => {
   return (
     <>
       <Box pad="small">
-        <Box direction="row-responsive">
-          <Heading margin="small">
-            Hey there, {props.user.displayName.split(" ")[0]}!
-          </Heading>
-          <Button onClick={props.signOut} label="Sign out" />
-        </Box>
+        <DashboardHeading changeTheme={props.changeTheme} user={props.user}/>
         <Box direction="row-responsive" margin={{top: "large"}}>
         <Box justify="center">
           <Calendar
