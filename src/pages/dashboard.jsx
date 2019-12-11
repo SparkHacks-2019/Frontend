@@ -17,7 +17,7 @@ const DashboardPage = props => {
   return (
     <>
       <Box pad="small">
-        <DashboardHeading changeTheme={props.changeTheme} user={props.user}/>
+        <DashboardHeading changeTheme={props.changeTheme} signOut={props.signOut} user={props.user}/>
         <Box direction="row-responsive" margin={{top: "large"}}>
         <Box justify="center">
           <Calendar
