@@ -1,22 +1,37 @@
 import React from "react";
-import { Box, Heading, Image, Button, Menu } from "grommet";
+import { Box, Heading, Image, Button, Menu, Text } from "grommet";
+import Typist from "react-typist";
 
 const DashboardHeading = props => {
   return (
-    <Box direction="row-responsive" >
+    <Box animation="fadeIn" margin={{top:"38rem"}}>
+      <Text>Rishi, you're doing pretty well! Based off of your previous performances, you've been doing great! Welcome to your 22 storey building.</Text>
+      <Box direction="row">
       <Heading textAlign="start" alignSelf="start">
-        Welcome back, {props.user.displayName.split("")}!
+        <Typist
+            cursor={{
+                blink: true,
+                hideWhenDone: true,
+                element: "",
+
+            }}
+          onTypingDone={() => {
+            props.setTypingState(false);
+          }}
+        >
+          Welcome back, {props.user.displayName.split("")}!
+        </Typist>
       </Heading>
       <Menu
-      pad="none"
-      style={{ marginLeft: "auto" }}
+        pad="none"
+        style={{ marginLeft: "auto" }}
         label={
           <Box
             // animation="fadeIn"
             height="xxsmall"
             width="xxsmall"
             margin="small"
-           round
+            round
           >
             <Image fit="cover" src={props.user.photoURL} />
           </Box>
@@ -29,6 +44,7 @@ const DashboardHeading = props => {
         dropBackground={{ color: "white", opacity: false }}
         size="medium"
       />
+      </Box>
     </Box>
   );
 };

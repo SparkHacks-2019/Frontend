@@ -5,7 +5,7 @@ const LandingSection1 = props => {
     return (
         <Box justify="center" alignContent="center" align="center">
             <Heading size="xlarge">Ideas</Heading>
-            <Text>Why we made Lilypad.</Text>
+            <Text>Why we made WayPoint.</Text>
             <Heading></Heading>
           <Heading alignSelf="center">Community</Heading>
           <WorldMap

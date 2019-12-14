@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Grommet, Box } from "grommet";
 import theme from "./theme";
-import withFirebaseAuth, {
-  WrappedComponentProps
-} from "react-with-firebase-auth";
+import withFirebaseAuth from "react-with-firebase-auth";
 import firebase from "firebase";
 import firebaseConfig from "./fire";
 import "firebase/auth";
@@ -32,10 +30,9 @@ function App({
   const [themeMode, setThemeMode] = useState(true);
 
   return (
-    <Grommet themeMode={themeMode?"dark":"light"} theme={theme}>
-      <Box animation={["fadeIn", "zoomIn"]}>
+    <Grommet themeMode={themeMode ? "dark" : "light"} theme={theme}>
+      <Box background="background" animation={["fadeIn", "zoomIn"]}>
         <React.Fragment>
-          {/* This is the switch statement that loads auth for dashboards  */}
           {user ? (
             <DashboardPage
               changeTheme={() => {
